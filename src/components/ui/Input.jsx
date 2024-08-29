@@ -1,4 +1,4 @@
-import { Search } from 'lucide-react';
+import { Search, Loader } from 'lucide-react';
 import { useState } from 'react';
 
 export function Input({ onDataFetch }) {
@@ -38,7 +38,7 @@ export function Input({ onDataFetch }) {
         className="absolute right-2 text-white bg-submit p-2 rounded-md cursor-pointer hover:opacity-80 duration-300 active:scale-90 disabled:cursor-progress"
         disabled={loading}
       >
-        Search
+        {loading ? <Loader className="animate-spin" /> : 'Search'}
       </button>
     </form>
   );
