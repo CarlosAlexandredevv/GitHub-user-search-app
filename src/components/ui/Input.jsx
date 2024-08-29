@@ -12,6 +12,7 @@ export function Input({ onDataFetch }) {
       const response = await fetch(`https://api.github.com/users/${username}`);
       const data = await response.json();
       onDataFetch(data);
+      setLoading(false);
     } catch (error) {
       console.error('Erro ao buscar dados', error);
     } finally {
