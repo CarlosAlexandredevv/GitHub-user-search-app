@@ -94,11 +94,17 @@ export function Card({ userData }) {
           <Twitter className="text-icon dark:text-white" />
           <a
             target="blank"
-            href={`https://twitter.com/${userData.twitter_username}` || null}
+            href={
+              userData.twitter_username === null
+                ? null
+                : `https://twitter.com/${userData.twitter_username}`
+            }
             className="dark:text-white  text-icon truncate w-[200px]"
           >
             {userData.twitter_username || (
-              <p className="opacity-40">Not Avaliable</p>
+              <p disabled className="opacity-40">
+                Not Avaliable
+              </p>
             )}
           </a>
         </div>
